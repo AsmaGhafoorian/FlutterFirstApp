@@ -34,7 +34,7 @@ class TodosScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TodoDetail(todo : todos[index]),
+                    builder: (context) => TodoDetail(todo : todos[index]), // navigate with constructor data
                   )
                 );
               }

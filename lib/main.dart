@@ -117,7 +117,7 @@ class MyApp extends StatelessWidget {
         Navigator.pushNamed(
             context,
             '/TodosScreen',
-            arguments: TodoArguments('Todos'));
+            arguments: TodoArguments('Todos')); // navigate with argument
       },
       child : Column(
         children: <Widget>[
