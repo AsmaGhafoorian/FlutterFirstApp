@@ -1,26 +1,20 @@
+import 'package:first_flutter_app/todo.dart';
 import 'package:flutter/material.dart';
-
-class TodoDetailArguments {
-  final String title;
-  final String message;
-
-  TodoDetailArguments(this.title, this.message);
-}
 
 class TodoDetail extends StatelessWidget{
 
   static const routName = '/TodoDetail';
+  final Todo todo;
+  TodoDetail({Key key, @required this.todo}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
 
-    final TodoDetailArguments args = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text(args.title),
+        title: Text(todo.title),
       ),
-      body: Center(
-        child: Text(args.message),
-      ),
+
     );
   }
 }

@@ -114,7 +114,10 @@ class MyApp extends StatelessWidget {
   GestureDetector _buildButtonColumn(String title, IconData icon, Color color, BuildContext context){
     return GestureDetector(
       onTap:() {
-        Navigator.pushNamed(context, '/TodosScreen');
+        Navigator.pushNamed(
+            context,
+            '/TodosScreen',
+            arguments: TodoArguments('Todos'));
       },
       child : Column(
         children: <Widget>[
