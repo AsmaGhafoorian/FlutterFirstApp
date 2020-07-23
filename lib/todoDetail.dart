@@ -14,7 +14,14 @@ class TodoDetail extends StatelessWidget{
       appBar: AppBar(
         title: Text(todo.title),
       ),
-
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
+      ),
     );
   }
 }
