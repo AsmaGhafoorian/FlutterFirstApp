@@ -94,10 +94,10 @@ class MyApp extends StatelessWidget {
       home : Scaffold(
         appBar: AppBar(
 
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
+//          leading: IconButton(
+//            icon: Icon(Icons.arrow_back, color: Colors.white),
+//            onPressed: () => Navigator.of(context).pop(),
+//          ),
 
           title: Text("Toolbar"),
 
@@ -111,6 +111,25 @@ class MyApp extends StatelessWidget {
             textPart
 
           ],
+        ),
+        drawer: Drawer(
+
+          child: ListView(
+            children: <Widget>[
+              DrawerHeader(
+                child: Text('Drawer Header'),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('item 1'),
+              ),
+              ListTile(
+                title: Text('item 2'),
+              )
+            ],
+          ),
         ),
       ),
     );
