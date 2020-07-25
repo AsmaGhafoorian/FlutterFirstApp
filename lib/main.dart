@@ -1,3 +1,6 @@
+
+import 'package:first_flutter_app/albumView.dart';
+import 'package:first_flutter_app/postAlbumView.dart';
 import 'package:first_flutter_app/todo.dart';
 import 'package:first_flutter_app/todoDetail.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,7 +13,9 @@ void main() {
     routes: {
       '/MyApp': (context) => MyApp(),
       '/TodosScreen' : (context) => TodosScreen(),
-      TodoDetail.routName : (context) => TodoDetail()
+      TodoDetail.routName : (context) => TodoDetail(),
+      AlbumView.routName : (context) => AlbumView(),
+      PostAlbumView.routName : (context) => PostAlbumView()
     },
   ));
 }

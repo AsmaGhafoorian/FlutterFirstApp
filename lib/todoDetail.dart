@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/albumView.dart';
 import 'package:first_flutter_app/todo.dart';
 import 'package:flutter/material.dart';
 
@@ -15,12 +16,24 @@ class TodoDetail extends StatelessWidget{
         title: Text(todo.title),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Go back!'),
+            ),
+
+            RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AlbumView.routName);
+              },
+              child: Text('Fetch Data'),
+            )
+
+          ],
+        )
       ),
     );
   }
