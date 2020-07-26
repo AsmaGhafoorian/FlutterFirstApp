@@ -1,10 +1,14 @@
 
 import 'package:first_flutter_app/albumView.dart';
+import 'package:first_flutter_app/photosView.dart';
 import 'package:first_flutter_app/postAlbumView.dart';
 import 'package:first_flutter_app/todo.dart';
 import 'package:first_flutter_app/todoDetail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'albumView.dart';
+import 'postAlbumView.dart';
 //
 void main() {
   // debugPaintSizeEnabled = true;
@@ -15,7 +19,8 @@ void main() {
       '/TodosScreen' : (context) => TodosScreen(),
       TodoDetail.routName : (context) => TodoDetail(),
       AlbumView.routName : (context) => AlbumView(),
-      PostAlbumView.routName : (context) => PostAlbumView()
+      PostAlbumView.routName : (context) => PostAlbumView(),
+      PhotosView.routName : (context) => PhotosView()
     },
   ));
 }
@@ -68,9 +73,9 @@ class MyApp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
 
-          _buildButtonColumn('CALL', Icons.call, color, context),
-          _buildButtonColumn( 'ROUTE', Icons.near_me, color, context),
-          _buildButtonColumn('SHARE', Icons.share, color, context),
+          _buildButtonColumn('CALL', Icons.call, color, PhotosView.routName,context),
+          _buildButtonColumn( 'ROUTE', Icons.near_me, color, PostAlbumView.routName,context),
+          _buildButtonColumn('SHARE', Icons.share, color, AlbumView.routName,context),
 
         ],
       ),
@@ -135,12 +140,12 @@ class MyApp extends StatelessWidget {
     );
   }//MyApp
 
-  GestureDetector _buildButtonColumn(String title, IconData icon, Color color, BuildContext context){
+  GestureDetector _buildButtonColumn(String title, IconData icon, Color color, String rout,BuildContext context){
     return GestureDetector(
       onTap:() {
         Navigator.pushNamed(
             context,
-            '/TodosScreen',
+            rout,
             arguments: TodoArguments('Todos')); // navigate with argument
       },
       child : Column(
