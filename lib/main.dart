@@ -73,9 +73,9 @@ class MyApp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
 
-          _buildButtonColumn('CALL', Icons.call, color, PhotosView.routName,context),
-          _buildButtonColumn( 'ROUTE', Icons.near_me, color, PostAlbumView.routName,context),
-          _buildButtonColumn('SHARE', Icons.share, color, AlbumView.routName,context),
+          _buildButtonColumn('PHOTOS', Icons.picture_in_picture, color, PhotosView.routName,context),
+          _buildButtonColumn( 'SEARCH', Icons.search, color, PostAlbumView.routName,context),
+          _buildButtonColumn('ALBUM', Icons.picture_in_picture_alt, color, AlbumView.routName,context),
 
         ],
       ),

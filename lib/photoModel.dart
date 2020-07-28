@@ -1,22 +1,20 @@
 
+import 'package:json_annotation/json_annotation.dart';
 
+part 'photoModel.g.dart';
+
+@JsonSerializable()
 class PhotoModel{
   final int albumId;
   final int id;
   final String title;
   final String url;
-  final String thumbnailUrl;
+  @JsonKey(name: 'thumbnailUrl') // rename property server name
+  final String thumbnailurl;
 
-  PhotoModel({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
+  PhotoModel({this.albumId, this.id, this.title, this.url, this.thumbnailurl});
 
-  factory PhotoModel.fromJson(Map<String, dynamic> json) {
-    return PhotoModel(
-      albumId: json['albumId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-      url: json['url'] as String,
-      thumbnailUrl: json['thumbnailUrl'] as String,
-    );
-  }
+  factory PhotoModel.fromJson(Map<String, dynamic> json) => _$PhotoModelFromJson(json);
+  Map<String, dynamic> toJson() => _$PhotoModelToJson(this);
 
 }
